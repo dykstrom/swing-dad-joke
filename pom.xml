@@ -6,15 +6,15 @@
 
     <artifactId>swing-dad-joke</artifactId>
     <groupId>se.dykstrom.swing</groupId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.code.style>official</kotlin.code.style>
         <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
-        <kotlin.version>1.5.0</kotlin.version>
-        <kotlin.coroutines.version>1.5.0-RC</kotlin.coroutines.version>
+        <kotlin.version>1.5.10</kotlin.version>
+        <kotlin.coroutines.version>1.5.2</kotlin.coroutines.version>
     </properties>
 
     <build>
@@ -67,13 +67,13 @@
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>retrofit</artifactId>
-            <version>2.6.0</version>
+            <version>2.9.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>converter-jackson</artifactId>
-            <version>2.6.0</version>
+            <version>2.9.0</version>
         </dependency>
 
         <dependency>
@@ -85,7 +85,7 @@
         <dependency>
             <groupId>com.formdev</groupId>
             <artifactId>flatlaf</artifactId>
-            <version>1.1.2</version>
+            <version>1.6.4</version>
         </dependency>
 
         <dependency>

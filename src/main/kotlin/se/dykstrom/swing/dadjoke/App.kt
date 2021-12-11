@@ -21,7 +21,7 @@ import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
 fun main() {
     SwingUtilities.invokeLater {
-        FlatDarkLaf.install()
+        FlatDarkLaf.setup()
         val view = MainView()
         MainController(view)
         view.frame().apply {
