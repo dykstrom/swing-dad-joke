@@ -15,8 +15,8 @@
  */
 package se.dykstrom.swing.dadjoke
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.swing.Swing
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import se.dykstrom.swing.dadjoke.rest.JokeClient
 
 class MainController(private val view: MainView) {
@@ -30,7 +30,7 @@ class MainController(private val view: MainView) {
 
     private fun handleSearchAction() {
         val searchTerm = view.textField.text.trim()
-        launchOnSwingThread {
+        MainScope().launch {
             try {
                 view.busyComponent.isBusy = true
                 view.textArea.text = getJoke(searchTerm).joke
@@ -47,14 +47,4 @@ class MainController(private val view: MainView) {
             jokeClient.getRandomJoke()
         else
             jokeClient.getRandomJokeBySearchTerm(searchTerm)
-}
-
-/**
- * Launches a new coroutine on the Swing EDT without blocking it and returns a reference to the coroutine as a [Job].
- * The coroutine is cancelled when the resulting job is [cancelled][Job.cancel].
- *
- * @param block the coroutine code which will be invoked in the Swing coroutine context.
- */
-fun launchOnSwingThread(block: suspend CoroutineScope.() -> Unit): Job {
-    return MainScope().launch(context = Dispatchers.Swing, block = block)
 }
